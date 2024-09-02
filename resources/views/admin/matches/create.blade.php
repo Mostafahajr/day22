@@ -2,11 +2,15 @@
     <x-navbar></x-navbar>
     <div class="row">
         <div class="col-sm-12 col-md-10">
-            @if($errors)
+            @if($errors->any())
                 <div class="alert alert-danger">
-                    @foreach ($errors as $error )
-                    {{$error}}
+                  <ul>
+                    @foreach ($errors->all() as $error )
+
+                    <li>{{$error}}</li>
                     @endforeach
+                  </ul>
+
                 </div>
             @endif
 
@@ -54,7 +58,7 @@
                           <label class="form-label" for="matchCompitation">
                             Stage
                           </label>
-                      <input class="form-control" type="text" id="matchCompitation"  name="stage" >
+                      <input class="form-co ntrol" type="text" id="matchCompitation"  name="stage" >
 
                   </div>
                 <div class="col-12">
